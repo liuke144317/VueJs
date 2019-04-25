@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/animate.css"/>
+	</head>
+	<body>
+		<div id="demo1">
+			<div class="center">
+				
+			</div>
+			<button @click="show = !show">动画</button>
+			<transition 
+				name='test'
+			 	v-on:before-enter="beforeEnter"
+			  	v-on:enter="enter"
+			  	v-on:after-enter="afterEnter"
+			  	v-on:enter-cancelled="enterCancelled"
+			 	>
+				<div v-show="show" class="ani">
+				</div>
+			</transition>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/animate.js"></script>
+		<!--<script src=""></script>-->
+	</body>
+	<style type="text/css">
+		body{
+			margin: 0!important;
+		}
+		.center{
+			width:500px;
+			height: 60px;
+			background: darkgoldenrod;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%)
+		}
+		#demo1{
+			width: 100%;
+			height: 600px;
+			background: #FFFAE8;
+			overflow: hidden;
+		}
+		.ani{
+			width: 200px;
+			height: 100px;
+			background: green;
+			margin: 10px auto 10px auto;
+		}
+		.test-enter-active{
+			transition: all .4s ease;
+			
+		}
+		.test-leave-active{
+			transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+		}
+		.test-enter,.test-leave-to{
+			transform: translateY(-20px);
+			opacity: 0;
+		}
+		
+	</style>
+</html>

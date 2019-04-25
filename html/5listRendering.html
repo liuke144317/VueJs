@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>列表渲染</title>
+	</head>
+	<body>
+		<!--v-for循环数组-->
+		<ul id="demo1">
+			<li v-for="item in items">{{item.message}}</li>
+		</ul>
+		<!--v-for添加索引-->
+		<!--v-for循环对象-->
+		<ul id="demo2">
+			<li v-for="val in obj">{{val}}</li>	
+			<!--一段取值范围的 v-for-->
+			<li v-for="val in 10">{{val}}</li>	
+			<!--v-for on a <template>-->
+			<template v-for="item in obj">
+				<li>{{ item }}</li>
+				<li class="divider" role="presentation"></li>
+			</template>
+		</ul>
+		
+		<!--显示过滤/排序结果-->
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/5listRendering.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS</title>
+		
+	</head>
+	<body>
+		<hr/>
+		<div id="app">
+			使用双大括号获取data中的值：{{message}}
+		</div>
+		<hr/>
+		<div id="app-2">
+			<span v-bind:title="message">
+				此处鼠标悬停查看动态绑定效果
+			</span>
+		</div>
+		<hr>
+		<div id="app-3">
+			<p v-if="seen">测试c-if</p>
+		</div>
+		<hr>
+		<p>普通方式给div添加文本：</p>
+		<div id="normal"></div>
+		<hr>
+		<p>使用c-for</p>
+		<div id="app-4">
+			<ol>
+				<li v-for="todo in todos">{{todo.test}}</li>
+			</ol>
+		</div>
+		<hr/>
+		<div id="app-5">
+			<p>使用v-on绑定事件：{{msg}}</p>
+			<button v-on:click="reverse">逆转消息</button>
+			<hr/>
+			<p>使用计算属性得到的值：{{reverseMSG}}</p>
+			<hr/>
+		</div>
+		<div id="app-6">
+			<p>{{msg}}</p>
+			<input v-model="msg"/>
+		</div>
+		<div id="app-7">
+			<ol>
+			  	<!-- 创建一个 todo-item 组件的实例 -->
+			  	<todo-item v-for="item in color" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+			</ol>
+		</div>
+		<div id="app-8">
+			<p>全名：{{fullName}}</p>
+			<p>姓：<input v-model="firstName"/></p>
+			<p>名：<input v-model="lastName"/></p>
+			
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/1VueExample.js" type="text/javascript"></script>
+	</body>
+</html>

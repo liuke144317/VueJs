@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单输入绑定</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/7FormInput.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--文本框-->
+		<div id="demo1"> 
+			<input v-model.lazy="message" placeholder="输入内容"/>
+			<p>显示内容：{{message}}</p>
+		</div>
+		<!--复选框-->
+		<div id="demo2"> 
+			<input v-model="checked" type="checkbox"/>
+			<label for="checkbox">{{checked}}</label>
+		</div>
+		<br>
+		<!--多个复选框-->
+		<div id="demo3">
+			<input v-model="checked" type="checkbox" id="" value="你"/>
+			<label for="checkbox">你</label>
+			<input v-model="checked" type="checkbox" id="" value="我"/>
+			<label for="checkbox">我</label>
+			<input v-model="checked" type="checkbox" id="" value="他"/>
+			<label for="checkbox">他</label>
+			<span>哪些？{{checked}}</span>
+		</div>
+		<br>
+		<!--下拉列表-->
+		<div id="demo4">
+			<select v-model="selected">
+				<option disabled  value="">请选择</option>
+				<option value="a">A</option>
+				<option value="b">B</option>
+				<option value="c">C</option>
+			</select>
+			<span>选择了哪些？{{selected}}</span>
+		</div>
+		<br>
+		<!--v-for循环加载option项-->
+		<div id="demo5">
+			<select v-model="selected">
+				<option v-for="item in options"  v-bind:value="item.value">{{item.text}}</option>
+			</select>
+			<span>选择了哪些？{{selected}}</span>
+		</div>
+	</body>
+</html>

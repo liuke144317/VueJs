@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件监听</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/6EventListening.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--代码逻辑直接写在v-on：click指令中-->
+		<div id="demo1">
+			<button v-on:click="count += 1 ">加1</button>
+			<p>累加结果{{count}}</p>
+		</div>
+		<!--逻辑写在方法中-->
+		<div id="demo2">
+			<button id="1243" v-on:click="greet">加1</button>
+			<p>累加结果{{count}}</p>
+		</div>
+		<!--内联处理器获取events参数，访问原始的 DOM 事件-->
+		<div id="demo3">
+			<button v-on:click="greet($event)">加1</button>
+			<!--点击事件将只会触发一次 -->
+			<button v-on:click.once="doThis">只触发一次事件的按钮</button>
+			<p>累加结果{{count}}</p>
+		</div>
+		
+		<!--事件修饰符-->
+		<!--点击事件将只会触发一次 -->
+		<div id="demo4">
+			<button v-on:click.once="doThis">只触发一次事件的按钮</button>
+		</div>
+		</br>
+		<!-- 阻止单击事件继续传播 -->
+		<div id="demo5">
+			<div v-on:click="first">
+				<button v-on:click.stop="doThis">阻止单击事件继续传播</button>
+			</div>
+		</div>
+		<br>
+		<div id="demo6">
+			<!-- 即事件不是从内部元素触发的 -->
+			<div v-on:click.self="doThis">
+				<button v-on:click="doThat">只当在 event.target 是当前元素自身时触发处理函数 ...</button>
+			</div>
+		</div>
+		<br>
+		<!--按键修饰符-->
+		<div id="demo7">
+			<input v-on:keyup.13="submit">
+		</div>
+		
+	</body>
+</html>

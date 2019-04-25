@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>style与class的绑定</title>
+		
+	</head>
+	<body>
+		<!--<div class="static active">123</div>-->
+		<!--内联class属性-->
+		<div id="app1" class="static" v-bind:class="{active:isActive,'text-danger':hasError}">
+			内联class属性
+		</div>
+		<!--外联定义class属性-->
+		<div id="app2" v-bind:class="classObject">
+			外联定义class属性
+		</div>
+		<!--使用计算属性绑定-->
+		<div id="app3" v-bind:class="classObject">
+			使用计算属性绑定
+		</div>
+		<!--传递数组属性绑定-->
+		<div id="app4" v-bind:class="[doc1,doc2]">
+			class中使用数组接收属性绑定
+		</div>
+		<!--根据条件使用三元表达式切换class-->
+		<div id="app5" v-bind:class="[isActive?doc1:'',doc2]">
+			根据条件使用三元表达式切换class
+		</div>
+		<!--在组件上使用样式(未成功)-->
+		<my-component class="abc"></my-component>
+		<!--内联绑定style-->
+		<div id="app6" v-bind:style="{color:activeColor,fontSize:activeFontSize+'px'}">
+			内联绑定style
+		</div>
+		<!--内联绑定一个完整的style样式-->
+		<div id="app7" v-bind:style="styleObject">
+			内联绑定一个完整的style样式
+		</div>
+		<!--v-bind:style的数组语法-->
+		<div id="app8" v-bind:style="[styleObject1,styleObject2]">
+			v-bind:style的数组语法
+		</div>
+		<!--多重值，用来兼容不同浏览器(未成功)-->
+		<div v-bind::style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }">多重值，用来兼容不同浏览器</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/3classAndStyle.js" type="text/javascript"></script>
+		
+	</body>
+</html>

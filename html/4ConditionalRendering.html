@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>条件渲染</title>
+	</head>
+	<body>
+		<!--v-if-->
+		<div id="app1">
+			<h1 v-if="false">Yes</h1>
+			<h1 v-else>No</h1>
+		</div>
+		<!--在 <template> 元素上使用 v-if 条件渲染分组-->
+		<!--<template>
+		  <h1>Title</h1>
+		  <p>Paragraph 1</p>
+		  <p>Paragraph 2</p>
+		</template>-->
+		<!--<template v-if="loginType === 'username'">
+			<label>Username</label>
+			<input placeholder="Enter your username">
+		</template>
+		<template v-else>
+			<label>Email</label>
+			<input placeholder="Enter your email address">
+		</template>-->
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../js/4ConditionalRendering.js" type="text/javascript"></script>
+	</body>
+</html>
